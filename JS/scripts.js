@@ -49,14 +49,38 @@ console.log(saludoCompleto1);
 //PROMPT + ALERT
 
 
-let nombreIngresado = prompt("Ingrese su nombre");
+let nombreIngresado = prompt("Ingrese su nombre"); //siempre devuelve un string. si quiero que me tome el numero ponerle parseint o float(para decimales)
 console.log(nombreIngresado);
 let salida = `Hola ${nombreIngresado}`;
-alert(nombreIngresado)
+alert(salida)
 
 let numero = parseFloat(prompt("Ingrese un numero"));
 let numero2 = 8;
 let hola = numero + numero2;
-alert(hola);
+alert(`la suma es ${hola}`);
 //parseInt para numero enteros cuando ingresan los datos en Prompt. sino ponemos esto lo toma todo como string y no permitiria hacer calculos matematiocs con los numeros.
 //parseFloat para numeros decimales
+
+
+//CONDICIONALES (IF ELSE ELSE IF)
+
+
+let respuesta = prompt("hizo la tarea???").toLocaleLowerCase()
+
+if(respuesta == "si"){
+    alert("puede salir a jugar");
+}else if(respuesta ==="no"){
+    alert("a estudiar");
+}else{
+    alert("contestar BIEN");
+}
+
+//=== compara valor y tipo de dato
+//== compara solo valor
+
+let = "andres"
+if(!"andres".includes("s")){ //aca anulo el inlcudes y es si pasa lo opuesto y me trae el valor falso
+    console.log("V tiene s");
+}else{
+    console.log("F no tiene s");
+}
