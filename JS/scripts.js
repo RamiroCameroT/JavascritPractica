@@ -84,3 +84,63 @@ if(!"andres".includes("s")){ //aca anulo el inlcudes y es si pasa lo opuesto y m
 }else{
     console.log("F no tiene s");
 }
+
+//FOR
+
+let Numero = parseInt(prompt("ingrese un numero"));
+for(let i = 0; i < 20; i++){
+    let resultado = numero * 1;
+    let mensaje = `el numero ${Numero} multiplicado por ${i} es igual a ${resultado}`;
+    alert(mensaje)
+}
+
+//BREAK 
+
+for(let i=0; i<10; i++){
+    if(i===7){
+        console.log("estamos en el break 7");
+        break
+    }
+    console.log(i);
+}
+
+//CONTINUE
+
+for(let i=0; i<10; i++){
+    if(i===7){
+       continue
+    }
+    console.log(i);
+}
+
+//WHILE
+let usuario = prompt("ingresar usuario").toLocaleUpperCase();
+while(usuario != "ANDRES"){
+    alert("ingresar nombre de usuario correcto");
+    usuario = prompt("ingresar usuario").toLocaleUpperCase();
+};
+alert("Bienvenido Andres");
+
+
+// //DO WHILE
+let repetir = false;
+do{
+    console.log("entramos al while");
+}while(repetir);
+
+//SWITCH
+let moneda = "ARS";
+switch (moneda) {
+    case "URU":
+        console.log("Es de uruguay")
+        break;
+    case "BR":
+        console.log("es de brasil");
+        break;
+    case "ARS":
+        console.log("es de argentina");
+        break;
+    default:
+        console.log("es de otro pais");
+        break;
+}
