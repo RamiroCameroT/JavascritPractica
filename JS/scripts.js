@@ -143,4 +143,63 @@ switch (moneda) {
     default:
         console.log("es de otro pais");
         break;
+};
+
+//FUNCIONES
+
+function suma(num1, num2) {
+    let resultado= num1 + num2;
+    console.log(resultado);
 }
+suma(10, 90);
+
+function sumar(num1, num2) {
+    let resultado= num1 + num2;
+    alert(resultado);
+}
+
+let numero1 = parseInt(prompt("ingrese numero 1"));
+let numero3 = parseInt(prompt("ingrese numero 2"));
+sumar(numero1, numero3);
+
+
+
+function sumarr(num10, num20) {
+    let resultado = num10 + num20;
+    return resultado; //el return me permite guardar una variable en una funcion para poder utilizarla despues
+}
+
+let resultado1 = sumarr(52, 65);
+console.log(resultado1);
+
+//funcion con flecha
+const suma = (valor1, valor2) => {
+    return valor1 + valor2
+}
+console.log(suma(2, 5));
+
+const suma1 = (valor3, valor4) => valor3 + valor4;
+console.log(suma1(21, 5));
+
+const suma2 = valor5 => 5 + valor5;
+console.log(suma2(6));
+
+const saludar = () => console.log("Hola");
+saludar();
+
+
+const suma22 = valor5 => {
+    let result = 5 + valor5;
+    console.log(result);
+}
+suma2(21);
+
+const suma = (a, b) => a + b;
+const resta = (a, b) => a - b;
+const iva = x => x * 0.21;
+
+let precioProducto = 500;
+let descuento = 50;
+
+let resultado = resta(suma(precioProducto, iva(precioProducto)), descuento);
+console.log(resultado);
