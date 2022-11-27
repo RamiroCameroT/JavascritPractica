@@ -203,3 +203,70 @@ let descuento = 50;
 
 let resultado = resta(suma(precioProducto, iva(precioProducto)), descuento);
 console.log(resultado);
+
+
+//OBJETOS
+
+const persona1 = {
+    nombre:"Ramiro",
+    edad: 26,
+    profesion: "abogado"
+   
+}
+
+persona1.profesion = "contador"; //Aca estoy modificando una propiedad del objeto
+persona1["profesion"] = "Programador";
+
+persona1.apellido = "Camero"; //Agregue esta propiedad al objeto
+delete persona1.edad; //Elimino una propiedad del objeto
+console.log(persona1);
+
+
+//CONSTRUCTORES DE OBJETOS
+function Persona(nombrePers, apellidoPers, edadPers) {
+    this.Nombre = nombrePers;
+    this.Apellido = apellidoPers;
+    this.Edad = edadPers;  
+}
+
+const persona123 = new Persona("Pepito","Camero", 28);
+const persona1234 = new Persona("Alan","Perez", 68);
+console.log(persona1234.Edad);
+
+
+function PersonaNew(info) { //otra forma para no poner todos los parametros cuando son muchos
+    this.Nombre = info.nombrePers;
+    this.Apellido = info.apellidoPers;
+    this.Edad = info.edadPers; 
+}
+const persona12345 = new PersonaNew({ //no hace falta respetar el ordem
+    edadPers: 56,
+    nombrePers: "Ramiro",
+    apellidoPers: "Camero"
+});
+
+function Persona(nombrePers, apellidoPers, edadPers) {
+    this.Nombre = nombrePers;
+    this.Apellido = apellidoPers;
+    this.Edad = edadPers;
+    this.hablar = function(){
+        return `Hola mi nombre es ${this.Nombre} y tengo ${this.Edad} años`;
+    }  
+}
+
+const persona1 = new Persona("Ramiro", "Camero", 26);
+const persona2 = new Persona("Ramirddddo", "Camero", 276)
+console.log(persona2.hablar());
+
+class PersonaNueva{
+    constructor (nombrePN, apellidoPN, profesionPN = "Contador"){ //establezco contador por defecto
+        this.Nombre = nombrePN;
+        this.Apellido = apellidoPN;
+        this.Profesion = profesionPN
+    }
+    hablar(){
+        return `Hola mi nombre es ${this.Nombre} y trabajo como ${this.Profesion}`;
+    }
+}
+const personaNueva1 = new PersonaNueva("Ramiro", "Camero");
+console.log(personaNueva1.hablar());

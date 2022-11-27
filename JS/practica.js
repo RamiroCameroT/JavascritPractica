@@ -144,12 +144,146 @@
 // }
 // suma2(21);
 
-const suma = (a, b) => a + b;
-const resta = (a, b) => a - b;
-const iva = x => x * 0.21;
+// const suma = (a, b) => a + b;
+// const resta = (a, b) => a - b;
+// const iva = x => x * 0.21;
 
-let precioProducto = 500;
-let descuento = 50;
+// let precioProducto = 500;
+// let descuento = 50;
 
-let resultado = resta(suma(precioProducto, iva(precioProducto)), descuento);
-console.log(resultado);
+// let resultado = resta(suma(precioProducto, iva(precioProducto)), descuento);
+// console.log(resultado);
+
+// const persona1 = {
+//     nombre:"Ramiro",
+//     edad: 26,
+//     profesion: "abogado"
+// }
+
+// persona1.profesion = "contador";
+// persona1["profesion"] = "Programador";
+
+// console.log(persona1);
+
+
+// const persona1 = {
+//     nombre:"Ramiro",
+//     edad: 26,
+//     profesion: "abogado"
+// };
+
+// persona1.profesion = "contador";
+// persona1["profesion"] = "Programador";
+
+// const persona1 = {
+//     nombre:"Ramiro",
+//     edad: 26,
+//     profesion: "abogado"
+// }
+
+// persona1.profesion = "contador"; //Aca estoy modificando una propiedad del objeto
+// persona1["profesion"] = "Programador";
+
+// persona1.apellido = "Camero"; //Agregue esta propiedad al objeto
+// delete persona1.nombre;
+// console.log(persona1);
+
+// function Persona(nombrePers, apellidoPers, edadPers) {
+//     this.Nombre = nombrePers;
+//     this.Apellido = apellidoPers;
+//     this.Edad = edadPers;  
+// }
+
+// const persona123 = new Persona("Pepito","Camero", 28);
+// const persona1234 = new Persona("Alan","Perez", 68);
+// console.log(persona1234.Apellido);
+
+// function PersonaNew(info) { //otra forma para no poner todos los parametros cuando son muchos
+//     this.Nombre = info.nombrePers;
+//     this.Apellido = info.apellidoPers;
+//     this.Edad = info.edadPers; 
+// }
+// const persona12345 = new PersonaNew({
+//     edadPers: 56,
+//     nombrePers: "Ramiro",
+//     apellidoPers: "Camero"
+// });
+// console.log(persona12345);
+
+// function Persona(nombrePers, apellidoPers, edadPers) {
+//     this.Nombre = nombrePers;
+//     this.Apellido = apellidoPers;
+//     this.Edad = edadPers;
+//     this.hablar = function(){
+//         return `Hola mi nombre es ${this.Nombre} y tengo ${this.Edad} años`;
+//     }  
+// }
+
+// const persona1 = new Persona("Ramiro", "Camero", 26);
+// const persona2 = new Persona("Ramirddddo", "Camero", 276)
+// console.log(persona2.hablar());
+
+// class PersonaNueva{
+//     constructor (nombrePN, apellidoPN, profesionPN){
+//         this.Nombre = nombrePN;
+//         this.Apellido = apellidoPN;
+//         this.Profesion = profesionPN
+//     }
+//     hablar(){
+//         return `Hola mi nombre es ${this.Nombre} y trabajo como ${this.Profesion}`;
+//     }
+// }
+// const personaNueva1 = new PersonaNueva("Ramiro", "Camero","Abogado");
+// console.log(personaNueva1.hablar());
+
+// class PersonaNueva{
+//     constructor (nombrePN, apellidoPN, profesionPN = "Contador"){
+//         this.Nombre = nombrePN;
+//         this.Apellido = apellidoPN;
+//         this.Profesion = profesionPN
+//     }
+//     hablar(){
+//         return `Hola mi nombre es ${this.Nombre} y trabajo como ${this.Profesion}`;
+//     }
+// }
+// const personaNueva1 = new PersonaNueva("Ramiro", "Camero", "Abogado");
+// console.log(personaNueva1.hablar());
+
+class Producto {
+    constructor(nombreP, precioP, cantidadP){
+        this.Nombre = nombreP;
+        this.Precio = precioP;
+        this.Cantidad = cantidadP
+        }
+    Total(){
+            return `Quedan ${this.Cantidad} productosss`
+    }
+    cantidad1(){
+        this.Cantidad = this.Cantidad - 1;
+        return `Quedan la cantidad de ${this.Cantidad}`
+    }
+}
+const producto1 = new Producto("Monitor", 500, 6)
+const producto2 = new Producto("TV", 750, 4)
+console.log(producto1.Total());
+producto1.cantidad1();
+console.log(producto1.Total());
+console.log(producto1);
+console.log(producto1.Total());
+producto1.cantidad1();
+console.log(producto1.Total());
+console.log(producto2);
+console.log(producto2.Total());
+producto2.cantidad1();
+producto2.cantidad1();
+console.log(producto2);
+console.log(producto2.Total());
+
+
+
+
+
+
+
+
+
