@@ -7,7 +7,7 @@ puedo tener varias lineas */
 
 
 
-//VARIABLES
+//----------------------VARIABLES----------------------
 
 var variableVar = "Audifonos Gamer"; //se puede modificar despues. ya no se usa VAR
 let variableLet = 20;  //se puede modificar despues
@@ -145,7 +145,7 @@ switch (moneda) {
         break;
 };
 
-//FUNCIONES
+//------------------------------FUNCIONES--------------------------------------
 
 function suma(num1, num2) {
     let resultado= num1 + num2;
@@ -205,7 +205,7 @@ let resultado = resta(suma(precioProducto, iva(precioProducto)), descuento);
 console.log(resultado);
 
 
-//OBJETOS
+//------------------------------OBJETOS----------------------------------
 
 const persona1 = {
     nombre:"Ramiro",
@@ -270,3 +270,76 @@ class PersonaNueva{
 }
 const personaNueva1 = new PersonaNueva("Ramiro", "Camero");
 console.log(personaNueva1.hablar());
+
+//----------------------------------ARRAYS-----------------------------------------
+
+const arreglo1= ["julieta", 2, true, "Gomez",1 ,4 ,5]; //este es el arreglo
+console.log(arreglo1[5]); // llsmsd en base al index, siempre arranca desde 0
+
+for(let i = 0; i < arreglo1.length; i++){ //aca involucro un for y lo que hago es que arranque i desde 0 y vaya aumentando de a uno, asi me trae todos los valores del array
+    console.log(arreglo1[i]);
+}
+
+console.log(arreglo1.length); //me dice cuantos elmentos tiene un arreglo
+arreglo1.push("Agustin"); //Agrego un elemento a un arreglo al final
+arreglo1.unshift("hola"); //Agrego un elemento a un arreglo al principio
+arreglo1.pop(); //Elimina el ultimo elemento
+arreglo1.shift(); //Elimina el primer elemento
+arreglo1.splice(1,3); // sirve para eliminar y se marca desde donde se arranca (el 1 seria el index 1), y eliminaria ese y dos mas hacia la derecha (en total tres)
+arreglo1.reverse(); //invierte el orden de los elementos del arreglo.
+console.log(arreglo1.join("---")); // transforma en un string todo el arreglo y divide cada elemento en base a lo que le pongas entre los parentesis
+
+const arreglo2 = [1, 2, 3, 4];
+const arreglo3 = ["hola", "adios", 6, 7, 8];
+const arregloUnido = arreglo3.concat(arreglo2); //aca concatene dos arreglos. el que se pone primero es el que va primero. los otros dos arreglos siguien existiendo.
+
+const corte = arreglo3.slice(1,3); // aca recorta un arreglo. el primer numero es del index desde donde parte y el segundo es hasta el indice que se quiere ir menos 1.
+
+console.log(arreglo3.indexOf("hola")); // aca me tira el index en el cual se encuentra posicionado lo que buscamos dentro del parentesis dentro de un arreglo.
+
+console.log(arreglo3.includes("adios")); // el includes lo que hace es buscar dentro del arreglo para ver si incluye lo que buscamos dentro del parentesis
+
+
+//funcion para eliminar datos de un arreglo
+const nombres = ["Ana", "Sofia", "Alejandra"];
+
+const eliminar = (nombre) => {
+    let index = nombres.indexOf(nombre);
+
+    if (index != -1) {  //cuando se busca la posicion de un elemento en un array y no lo encuentra nos devuelve el -1
+        nombres.splice(index, 1);
+    };
+
+    console.log(nombres);
+    
+}
+
+eliminar("Sofia");
+
+//arrays con onbjetos
+
+const productosArray = [
+    {id: 1, nombre: "Ramiro", apellido: "Camero"},
+    {id: 1, nombre: "Julieta", apellido: "Gomez"},
+    {id: 1, nombre: "Nicole", apellido: "Fofor"},
+];
+
+for (const producto of productosArray){  //esta forma de usar for remplaza al for en los arrays con objetos.... se le puede poner constproducto o cualquier otro nombre ( seria como el i en el otro caso. es el iterador)
+    console.log(producto.apellido); //aca si le agrego el .apellido por ejemplo hago que solo me traiga ese elemento de todos los productos.
+};
+
+
+//ir agregando objetos a un array con un constructor
+class Producto {
+    constructor(nombreP, apellidoP, edadP){
+        this.Nombre = nombreP;
+        this.Apellido = apellidoP;
+        this.Edad = edadP;
+    }
+};
+const productos = [];
+
+productos.push(new Producto("Ramiro", "Camero", 26));
+productos.push(new Producto("Juli", "Gomez", 27));
+productos.push(new Producto("Jose", "Pepe", 23));
+console.log(productos);
