@@ -577,6 +577,96 @@ console.log(hoy.toDateString());
 console.log(hoy.toLocaleDateString());
 console.log(hoy.toLocaleString());
 
-let navidad = new Date("DEcember 24, 2021");
+let navidad = new Date("December 24, 2021");
 let hoy1 = new Date();
 const milisegundosPorDia = (navidad - hoy1); //aca me lo trae en milisegundos
+
+
+//DOM  pata trabajar con Javascript colocar IDs en el html y para trabajar con CSS utiizar clases
+
+//GetElementById
+let elementoHtml = document.getElementById("Aplicacion");
+console.log(elementoHtml); // Me trae todo el div  <div id="Aplicacion"> <p>Hola a todos</p> </div>
+console.log(elementoHtml.innerHTML); // aca me trae todo lo que esta dentro del div  <p>Hola a todos</p>
+console.log(elementoHtml.innerText); //aca solo me trae el texto Hola a todos
+
+//GetElementByClassName
+let elementoHtmlClass = document.getElementsByClassName("objetos");
+console.log(elementoHtmlClass); // me los trae como si fuera un array
+console.log(elementoHtmlClass[0].innerHTML);// Aca me trae lo que esta dentro de la etiqueta li del index 0
+
+//GetElementByTagName
+
+let elementoHtmlTag = document.getElementsByTagName("h3"); // me los trae como si fuera un array
+console.log(elementoHtmlTag);
+console.log(elementoHtmlTag[2].innerHTML);
+
+let elementoHtmlClass1 = document.getElementsByClassName("objetos"); 
+for(const item of elementoHtmlClass1){ //recorremos el array uno por uno
+    console.log(item.innerHTML);
+};
+
+//Modificar el HTML desde Javascript
+
+let saludo2 = document.getElementById("saludo");
+saludo2.innerHTML = "holaaaa";
+
+let saludo3 = document.getElementById("saludo");
+let seccion = prompt("Introduzca saludo");
+
+if(seccion === "Hola"){ //aca modifico el h4 del HTML directamente el texto
+    saludo3.innerHTML = "Hola Buen dia"
+} else if (seccion === "Chau"){
+    saludo3.innerHTML = "Adios"
+} else{
+    saludo3.innerHTML = "otra vez"
+};
+
+if(seccion === "Hola"){ 
+    saludo3.className = "Azul" //aca le agrego CSS
+    saludo3.innerHTML = "<h1>Hola Buen dia</h1>" //aca modifico el h4 por un h1  cambio la etiqueta
+} else if (seccion === "Chau"){
+    saludo3.className = "Amarillo"
+    saludo3.innerHTML = "<h1>Adios</h1>"
+} else{
+    saludo3.innerHTML = "<h1>otra vez</h1>"
+};
+
+//Creacion de Nodos  (crear etiquetas en HTML desde Javascript)
+
+let tituloH3 = document.createElement("h3");  // Paso 1 Aca agrego un H3
+tituloH3.innerHTML = "<p>Holaaa soy un parrafo dentro de h3</p>" // paso 2 Aca defino que hay por dentro del H3
+document.body.append(tituloH3) // Paso 3 Aca agrego el h3 al html y lo pongo en el body
+
+//con Array simple
+let listaCompleta = document.getElementById("lista")  //Aca voy agregando datos al html en base a un array, si yo agrego algo al array, se agrega automaticamente al html
+const opcionesLista = ["Ramiro", "Denisse", "Nicole", "Julieta", "Facu"]
+opcionesLista.forEach(item =>{
+    let li = document.createElement("li");
+    li.innerHTML = item;
+    listaCompleta.append(li);
+});
+
+//con Array con objetos
+
+let listaProductos = document.getElementById("lista"); //Aca traigo el UL del HTML
+const productos33 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500},  //si agrego nuevos productos se agregan automaticamente al html
+];
+productos33.forEach(item =>{
+    let div = document.createElement("div");
+    div.innerHTML = `
+    <h2>ID: ${item.id}</h2>
+    <h3>Nombre: ${item.nombre}</h3>
+    <b>Precio: ${item.precio}</b>
+    `;
+    lista.append(div);
+})
+
+//Eliminar Nodos
+let contenedor11 = document.getElementById ("contenedor1"); //primero me lo traigo para javascript y despues lo elimino en base a la variable que le asigne
+contenedor11.remove();
+

@@ -576,7 +576,86 @@
 // console.log(hoy.toLocaleDateString());
 // console.log(hoy.toLocaleString());
 
-let navidad = new Date("DEcember 24, 2021");
-let hoy = new Date();
+// let navidad = new Date("DEcember 24, 2021");
+// let hoy = new Date();
 
-const milisegundosPorDia = (navidad - hoy); //aca me lo trae en milisegundos
+// const milisegundosPorDia = (navidad - hoy); //aca me lo trae en milisegundos
+
+
+// let elementoHtml = document.getElementById("Aplicacion");
+// console.log(elementoHtml); // Me trae todo el div  <div id="Aplicacion"> <p>Hola a todos</p> </div>
+// console.log(elementoHtml.innerHTML); // aca me trae todo lo que esta dentro del div  <p>Hola a todos</p>
+// console.log(elementoHtml.innerText); //aca solo me trae el texto Hola a todos
+
+
+// let elementoHtmlClass = document.getElementsByClassName("objetos");
+// console.log(elementoHtmlClass);
+// console.log(elementoHtmlClass[0].innerHTML);// Aca me trae lo que esta dentro de la etiqueta li del index 0
+
+// let elementoHtmlTag = document.getElementsByTagName("h3");
+// console.log(elementoHtmlTag[2].innerHTML);
+
+// let elementoHtmlClass1 = document.getElementsByClassName("objetos");
+// for(const item of elementoHtmlClass1){
+//     console.log(item.innerHTML);
+// // // };
+// // let saludo2 = document.getElementById("saludo");
+// // saludo2.innerHTML = "holaaaa"
+
+// let saludo3 = document.getElementById("saludo");
+// let seccion = prompt("Introduzca saludo");
+
+// // if(seccion === "Hola"){
+// //     saludo3.innerHTML = "Hola Buen dia"
+// } else if (seccion === "Chau"){
+//     saludo3.innerHTML = "Adios"
+// } else{
+//     saludo3.innerHTML = "otra vez"
+// };
+
+// if(seccion === "Hola"){ 
+//     saludo3.innerHTML = "<h1>Hola Buen dia</h1>"
+// } else if (seccion === "Chau"){
+//     saludo3.innerHTML = "<h1>Adios</h1>"
+// } else{
+//     saludo3.innerHTML = "<h1>otra vez</h1>"
+// };
+// if(seccion === "Hola"){ 
+//     saludo3.className = "Azul" //aca le agrego CSS
+//     saludo3.innerHTML = "<h1>Hola Buen dia</h1>" //aca modifico el h4 por un h1  cambio la etiqueta
+// } else if (seccion === "Chau"){
+//     saludo3.className = "Amarillo"
+//     saludo3.innerHTML = "<h1>Adios</h1>"
+// } else{
+//     saludo3.innerHTML = "<h1>otra vez</h1>"
+// };
+// let tituloH3 = document.createElement("h3");  // Aca agrego un H3
+// tituloH3.innerHTML = "<p>Holaaa soy un parrafo dentro de h3</p>" // Aca defino que hay por dentro del H3
+// // document.body.append(tituloH3) // aca agrego el h3 al html y lo pongo en el body
+
+// let contenedor11 = document.getElementById ("contenedor1");
+// // contenedor11.remove();
+
+// let listaCompleta = document.getElementById("lista")
+// const opcionesLista = ["Ramiro", "Denisse", "Nicole", "Julieta", "Facu"]
+// opcionesLista.forEach(item =>{
+//     let li = document.createElement("li");
+//     li.innerHTML = item;
+//     listaCompleta.append(li);
+// });
+let listaProductos = document.getElementById("lista");
+const productos33 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500}, 
+];
+productos33.forEach(item =>{
+    let div = document.createElement("div");
+    div.innerHTML = `
+    <h2>ID: ${item.id}</h2>
+    <h3>Nombre: ${item.nombre}</h3>
+    <b>Precio: ${item.precio}</b>
+    `;
+    lista.append(div);
+})
