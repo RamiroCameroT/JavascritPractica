@@ -343,3 +343,240 @@ productos.push(new Producto("Ramiro", "Camero", 26));
 productos.push(new Producto("Juli", "Gomez", 27));
 productos.push(new Producto("Jose", "Pepe", 23));
 console.log(productos);
+
+
+//FUNCIONES AVANZADAS
+
+//Son funciones que reciben por parametro una funcion o retornan una funcion
+
+
+function mayorQue(n){ // esta es una funcion que retorna una funcion
+    return m => m > n;
+};
+let mayorQueCinco = mayorQue(5);
+console.log(mayorQueCinco(6));
+
+function operaciones (operacion){
+    if(operacion === "sumar"){
+        return (x, y) => x + y;
+    }else if(operacion === "restar"){
+        return (x, y) => x - y;
+    }else if(operacion === "multiplicar"){
+        return (x, y) => x * y;
+    }else{
+        return (x, y) => x / y;
+    };
+};
+
+let suma = operaciones("sumar"); //(x, y) => x + y;
+console.log(suma(6, 90));
+
+let restar = operaciones("restar");
+console.log(restar(9, 5));
+
+let multiplicacion = operaciones("multiplicar");
+console.log(multiplicacion(2, 50));
+
+let division = operaciones();
+console.log(division(80, 8));
+
+
+let iteradora = (arreglo, funcion) => { //me tira error
+    for (const item of iteradora) {
+        funcion(item);
+    };
+};
+
+iteradora ([1, 2, 3, 4], console.log);
+
+//Metodos de Busca y Transformacion
+
+//FOR EACH (es un metodo de los arreglos para recorrer los arreglos y cada uno de sus elementos)
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+for (const numero66 of numbers){
+    console.log(numero66);
+};
+
+numbers.forEach( numero => { //ponemos una arrow function dentro del foreach. Le ponemos numero como parametro
+    console.log(numero);
+});
+
+//FIND (encuentra el primer elemento que cumpla la condicion)
+
+const productos5 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500}, 
+];
+
+let encontrado = productos5.find (item => item.nombre === "medias"); //al igual que antes, le metimos una arrow function
+
+console.log(encontrado);
+
+//otra forma con prompt
+
+let nombre5 = prompt("ingrese el producto que esta buscando");
+
+let producto501 = productos5.find (item => item.nombre === nombre5);
+
+let mensaje5 = `El precio del producto ${nombre5} es ${producto501.precio}`;
+
+alert(mensaje5);
+
+
+//FILTER  (lo que hace es filtrar) genera un nuevo arreglo con los productos filtrados
+
+const productos6 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500}, 
+];
+
+const filtro6 = productos6.filter(item => item.precio > 2000);
+
+console.log(filtro6);
+
+//otra forma
+
+let precioMinimo = parseInt(prompt("Ingrese precio minimo"))
+const filtro601 = productos6.filter(item => item.precio > precioMinimo);
+
+filtro601.forEach (item => { //item es el parametro de la arrow function
+    let mensaje = `
+    id: ${item.id}
+    nombre: ${item.nombre}
+    precio: ${item.precio}`
+    ;
+
+    alert(mensaje)
+});
+
+//SOME (busca si uno de los elementos del array cumple determinada condicion y nos devuelve true or false)
+
+const productos68 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500}, 
+];
+
+console.log(productos68.some(
+    item => item.nombre === "camisa"
+));
+
+let nombre701 = prompt("ingrese el producto a buscar");
+alert(productos68.some(
+    item => item.nombre === nombre701
+));
+
+if(productos68.some ( item => item.nombre === nombre701)){
+    alert("el producto se encuentra disponible")
+}else{
+    alert("producto no disponible")
+};
+
+
+//MAP (crea un nuevo arreglo solo con lo que mapeamos o sirve para actualizar arreglos)
+
+const productos603 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500}, 
+];
+
+let nombres603 = productos603.map(item => item.nombre); //aca se crea un arreglo solo con los nombres
+console.log(nombres603); 
+
+const actualizacion = productos603.map(  //aca se actualizan los precios y se forma un nuevo arreglo con los precios actualizados
+    item => {
+        return {
+            id: item.id,
+            nombre: item.nombre,
+            precio: item.precio + item.precio * 1.10
+        }
+    }
+);
+
+console.log(actualizacion);
+
+
+//REDUCE (Sirve para sumar cosas de los arrays, por ejemplo el total de los precios, el total de unidades)
+
+const numeros36 = [1, 2, 3, 4, 5];
+
+const total36 = numeros36.reduce((acumulador, item) => acumulador + item, 0); //el primer parametro ((acumulador, item) => acumulador + item), es la arrow function, y el segundo es el valor inicial del parametro acumulador dentro de la arrow function
+
+console.log(total36);
+
+const productos607 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500}, 
+];
+
+let total607 = productos607.reduce((acumulador, item) => acumulador + item.precio, 0);  //aca sumo los precios de cada producto
+console.log(total607);
+
+
+//SORT (sirve para ordenar un array, de menor a mayor o inversa, alfabeticamante o inversa)
+
+const numeros365 = [1, 20, 37, 400, 5];
+
+console.log(numeros365.sort((a, b) => a - b));  //aca ordena de forma ascendente
+console.log(numeros365.sort((a, b) => b - a));  //aca ordena de forma descendente
+
+
+const productos609 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500}, 
+];
+
+console.log(productos609.sort((a, b) => {
+    if (a.nombre > b.nombre) {
+        return 1;  //aca ordena el array alfabeticamente en base al nombre de cada objeto  a-z
+    }
+    if (a.nombre < b.nombre) {
+        return -1  //si intercambiamos el -1 por 1 y arriba el 1 por -1, lo ordena de atras para adelante  z-a
+    }
+    return 0;
+}));
+
+
+//MATH
+console.log(Math.E);
+console.log(Math.PI);
+console.log(Math.max(1, 5, 8, 90, 108, 5, 87)); //busca el maximo
+console.log(Math.min(1, 5, 8, 90, 108, 5, 87)); //busca el minimo
+console.log(Math.ceil(5.7)); //lo redondea para arriba
+console.log(Math.floor(5.7)); //lo redondea para abajo
+console.log(Math.round(5.7)); // lo redondea al mas cercano
+console.log(Math.sqrt(9)); //retorna la raiz cuadrada
+console.log(Math.random()); // genera un numero al azar entre 0 y 1
+console.log(Math.random() * 50); // genera un numero al azar entre 0 y 50  los puedo combinar con cualquier otro de math
+
+
+//DATE
+console.log(Date());
+console.log(new Date("2022 1, 10 23:15:32"));
+
+let hoy = new Date("March 6, 2022 23:45:19");
+
+console.log(hoy.getDay());
+console.log(hoy.getFullYear());
+console.log(hoy.getMonth());
+
+console.log(hoy.toDateString());
+console.log(hoy.toLocaleDateString());
+console.log(hoy.toLocaleString());
+
+let navidad = new Date("DEcember 24, 2021");
+let hoy1 = new Date();
+const milisegundosPorDia = (navidad - hoy1); //aca me lo trae en milisegundos

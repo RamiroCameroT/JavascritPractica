@@ -335,16 +335,248 @@
 //     console.log(producto.apellido); //aca si le agrego el .apellido por ejemplo hago que solo me traiga ese elemento de todos los productos.
 // };
 
-class Producto {
-    constructor(nombreP, apellidoP, edadP){
-        this.Nombre = nombreP;
-        this.Apellido = apellidoP;
-        this.Edad = edadP;
-    }
-};
-const productos = [];
+// class Producto {
+//     constructor(nombreP, apellidoP, edadP){
+//         this.Nombre = nombreP;
+//         this.Apellido = apellidoP;
+//         this.Edad = edadP;
+//     }
+// };
+// const productos = [];
 
-productos.push(new Producto("Ramiro", "Camero", 26));
-productos.push(new Producto("Juli", "Cahfdo", 26));
-productos.push(new Producto("Esteban", "Cfgsero", 26));
-console.log(productos);
+// // productos.push(new Producto("Ramiro", "Camero", 26));
+// // productos.push(new Producto("Juli", "Cahfdo", 26));
+// // productos.push(new Producto("Esteban", "Cfgsero", 26));
+// // console.log(productos);
+
+// // function mayorQue(n){
+// //     return m => m > n;
+// // };
+
+// // // let mayorQueCinco = mayorQue(5);
+// // // console.log(mayorQueCinco(3));
+
+// // function operaciones (operacion){
+// //     if(operacion === "sumar"){
+// //         return (x, y) => x + y;
+// //     }else if(operacion === "restar"){
+// //         return (x, y) => x - y;
+// //     }else if(operacion === "multiplicar"){
+// //         return (x, y) => x * y;
+// //     }else{
+// //         return (x, y) => x / y;
+// //     };
+// // };
+
+// // let suma = operaciones("sumar"); //(x, y) => x + y;
+// // console.log(suma(6, 90));
+
+// // let restar = operaciones("restar");
+// // console.log(restar(9, 5));
+
+// // let multiplicacion = operaciones("multiplicar");
+// // console.log(multiplicacion(2, 50));
+
+// // let division = operaciones();
+// // console.log(division(80, 8));
+
+// // let iteradora = (arreglo, funcion) => { //ERRORR
+// //     for (const item of iteradora) {
+// //         funcion(item);
+// //     };
+// // };
+
+// // iteradora ([1, 2, 3, 4], console.log);
+
+// // const numbers = [1, 2, 3, 4, 5, 6];
+
+// // numbers.forEach( numero=> {
+// //     console.log(numero);
+// // });
+
+// // const productos5 = [
+// //     {id: 1, nombre: "camisa", precio: 3500},
+// // //     {id: 2, nombre: "pantalon", precio: 3000},
+// // //     {id: 3, nombre: "medias", precio: 1800},
+// // //     {id: 4, nombre: "cinturon", precio: 1500}, 
+// // // ];
+
+// // // let encontrado = productos5.find (item => item.nombre === "medias");
+
+// // // console.log(encontrado);
+
+// // const productos5 = [
+// //     {id: 1, nombre: "camisa", precio: 3500},
+// //     {id: 2, nombre: "pantalon", precio: 3000},
+// //     {id: 3, nombre: "medias", precio: 1800},
+// //     {id: 4, nombre: "cinturon", precio: 1500}, 
+// // ];
+
+// // // let encontrado = productos5.find (item => item.nombre === "medias"); //al igual que antes, le metimos una arrow function
+
+// // // console.log(encontrado);
+
+// // let nombre5 = prompt("ingrese el producto que esta buscando");
+
+// // let producto501 = productos5.find (item => item.nombre === nombre5);
+
+// // let mensaje5 = `El precio del producto ${nombre5} es ${producto501.precio}`;
+
+// // alert(mensaje5)
+
+// const productos6 = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500}, 
+// ];
+
+// // const filtro6 = productos6.filter(item => item.precio > 2000);
+
+// // console.log(filtro6);
+
+// let precioMinimo = parseInt(prompt("Ingrese precio minimo"))
+// const filtro601 = productos6.filter(item => item.precio > precioMinimo);
+
+// filtro601.forEach (item => {
+//     let mensaje = `
+//     id: ${item.id}
+//     nombre: ${item.nombre}
+// //     precio: ${item.precio}`;
+
+// //     alert(mensaje)
+// // });
+
+// const productos68 = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500}, 
+// ];
+
+// // console.log(productos68.some(
+// //     item => item.nombre === "camisa"
+// // ));
+
+// let nombre701 = prompt("ingrese el producto a buscar");
+// // alert(productos68.some(
+// //     item => item.nombre === nombre701
+// // ));
+// if(productos68.some ( item => item.nombre === nombre701)){
+//     alert("el producto se encuentra disponible")
+// };
+
+// const productos603 = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500}, 
+// // ];
+
+// // let nombres603 = productos603.map(item => item.nombre);
+// // console.log(nombres603);
+
+// const productos603 = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500}, 
+// ];
+
+// // let nombres603 = productos603.map(item => item.nombre); //aca se crea un arreglo solo con los nombres
+// // console.log(nombres603); 
+
+// const actualizacion = productos603.map( item => {
+//         return {
+//             id: item.id,
+//             nombre: item.nombre,
+//             precio: item.precio + item.precio * 1.10
+//         }
+//     }
+// );
+
+// console.log(actualizacion);
+
+// const numeros36 = [1, 2, 3, 4, 5, 6];
+
+// const total36 = numeros36.reduce((acumulador, item) => acumulador + item, 0);
+
+// // console.log(total36);
+
+// const productos607 = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500}, 
+// ];
+
+// let total607 = productos607.reduce((acumulador, item) => acumulador + item.precio, 0);
+// // console.log(total607);
+
+// const numeros365 = [1, 20, 37, 400, 5];
+
+// console.log(numeros365.sort((a, b) => a - b));  //aca ordena de forma ascendente
+// console.log(numeros365.sort((a, b) => b - a));  //aca ordena de forma descendente
+// // console.log(numeros365.sort());
+
+// const productos609 = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500}, 
+// ];
+
+// console.log(productos609.sort((a, b) => {
+//     if (a.nombre > b.nombre) {
+//         return 1;
+//     }
+//     if (a.nombre < b.nombre) {
+//         return -1
+//     }
+//     return 0;
+// }));
+
+// console.log(Math.E);
+// console.log(Math.PI);
+// console.log(Math.max(1, 5, 8, 90, 108, 5, 87));
+// console.log(Math.min(1, 5, 8, 90, 108, 5, 87));
+// console.log(Math.ceil(5.7));
+// console.log(Math.floor(5.7));
+// console.log(Math.round(5.7)); // lo redondea al ams cercano
+// console.log(Math.sqrt(9)); //retorna la raiz cuadrada
+// console.log(Math.random());
+// console.log(Math.random() * 50); // genera un numero al azar entre 0 y 50
+// console.log(Math.random() * 50 + 45); // genera un numero al azar entre 0 y 50
+
+// console.log(Date());
+// // console.log(new Date(2021, 12, 1));
+// console.log(new Date("2022 1, 10 15:15:32"));
+
+
+// let hoy = new Date();
+// console.log(hoy);
+
+// console.log(hoy.getDay());
+// console.log(hoy.getFullYear());
+// console.log(hoy.getMonth());
+
+// let hoy = console.log(Date());;
+// console.log(hoy.getDay());
+// // console.log(hoy.getFullYear());
+// // console.log(hoy.getMonth());
+
+
+// let hoy = new Date("March 6, 2022 23:45:19");
+
+// console.log(hoy.getDay());
+// console.log(hoy.getFullYear());
+// console.log(hoy.getMonth());
+
+// console.log(hoy.toDateString());
+// console.log(hoy.toLocaleDateString());
+// console.log(hoy.toLocaleString());
+
+let navidad = new Date("DEcember 24, 2021");
+let hoy = new Date();
+
+const milisegundosPorDia = (navidad - hoy); //aca me lo trae en milisegundos
