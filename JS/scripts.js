@@ -670,3 +670,92 @@ productos33.forEach(item =>{
 let contenedor11 = document.getElementById ("contenedor1"); //primero me lo traigo para javascript y despues lo elimino en base a la variable que le asigne
 contenedor11.remove();
 
+
+//EVENTOS
+
+//CLICK
+
+//Primera forma => DOM EventListener  element.addEventListener(event, function);  aca a la function no ponerle (), sino se ejecutaria todo el tiempo . 
+
+let boton = document.getElementById("boton");
+const saludar12 = () => {
+    alert("Hiciste click en el boton")
+};
+boton.addEventListener("click", saludar12); 
+
+//con parametro en la funcion
+let boton123 = document.getElementById("boton"); 
+const ejecutar = (apellido) => {
+    console.log("Hola tu apellido es", apellido)
+};
+boton123.addEventListener("click", () => ejecutar("Juli"))
+
+//Segunda forma
+let boton1 = document.getElementById("boton");
+boton1.onclick = saludar12; 
+
+boton1.onclick = () => saludar12("Julieta"); // con parametro
+
+
+/*
+-----------Eventos del mouse-------------
+-mousedown/mouseup
+-mouseover/mouseout
+-mousemove
+-click
+
+-----------Eventos del teclado-------------
+-keydown
+-keyup
+
+-change   (cuando me salgo de un lugar y paso a hacer otra cosa, se refiere al cambio)
+
+*/
+
+//INPUT
+
+let input12= document.getElementById("nombre1");
+input12.addEventListener("input", () => {
+    console.log(input12.value); //hacer referencia a input.value ( para hacer cosas en base a lo que se agregue en el input)
+});
+
+//SUBMIT
+let formulario = document.getElementById("formulario")
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault(); //esto hace que los datos cargados en el formulario no se borren una vez que ponemos enviar
+    alert("hola")
+});
+
+let formulario1 = document.getElementById("formulario")
+formulario1.addEventListener("submit", (e) => {
+    e.preventDefault(); 
+    let inputs = e.target.children; //aca se van guardando los inputs
+    console.log((inputs[0].value)); //puedo sino poner (inputs) y me los trae todo   input[0] se refiere al primer input del html, que este caso es el de type text
+});
+
+
+//Agregar elementos a un carrito
+const productos34 = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500},  //si agrego nuevos productos se agregan automaticamente al html
+];
+
+productos34.forEach(item => {
+    let div = document.createElement("div");
+    div.innerHTML = `
+    <h2>ID: ${item.id}</h2>
+    <h3>Nombre: ${item.nombre}</h3>
+    <b>Precio: ${item.precio}</b>
+    <button id="boton${item.id}">Agregar</button>
+    `;
+
+    document.body.append(div);
+    let boton = document.getElementById(`boton${item.id}`);
+
+    const ejecutar = (id) =>{
+        console.log(id);
+    }
+    boton.addEventListener("click", () => ejecutar(item.id));
+})

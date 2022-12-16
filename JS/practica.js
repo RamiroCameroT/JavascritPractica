@@ -640,22 +640,91 @@
 // const opcionesLista = ["Ramiro", "Denisse", "Nicole", "Julieta", "Facu"]
 // opcionesLista.forEach(item =>{
 //     let li = document.createElement("li");
-//     li.innerHTML = item;
-//     listaCompleta.append(li);
+// //     li.innerHTML = item;
+// //     listaCompleta.append(li);
+// // });
+// let listaProductos = document.getElementById("lista");
+// const productos33 = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500}, 
+// ];
+// productos33.forEach(item =>{
+//     let div = document.createElement("div");
+//     div.innerHTML = `
+//     <h2>ID: ${item.id}</h2>
+//     <h3>Nombre: ${item.nombre}</h3>
+//     <b>Precio: ${item.precio}</b>
+//     `;
+//     lista.append(div);
+// })
+
+// let boton1 = document.getElementById("boton");
+
+// const saludar12 = () => {
+//     alert("Hiciste click en el boton")
+// };
+
+// boton.addEventListener("click", saludar12);
+
+// let boton1 = document.getElementById("boton");
+// boton1.onclick = saludar12; 
+
+// let boton = document.getElementById("boton");
+
+// const saludar132 = (nombre) => {
+//     alert("Hiciste click en el boton", nombre)
+// };
+
+// // boton.addEventListener("click", () => saludar132("Juli"));  //si la funcion es con parametros le tengo que poner aca una arrow function
+
+// let boton = document.getElementById("boton");
+
+// const ejecutar = (apellido) => {
+//     console.log("Hola tu apellido es", apellido)
+// };
+
+// boton.addEventListener("click", () => ejecutar("Juli"))
+
+
+
+
+// let formulario = document.getElementById("formulario")
+// formulario.addEventListener("submit", (e) => {
+// //     e.preventDefault(); //esto hace que los datos cargados en el formulario no se borren una vez que ponemos enviar
+// //     e.target.children;
+
+// // });
+// let formulario = document.getElementById("formulario")
+// formulario.addEventListener("submit", (e) => {
+//     e.preventDefault(); 
+//     let inputs = e.target.children; //aca se van guardando los inputs
+//     console.log((inputs)); //puedo sino poner (inputs) y me los trae todo
 // });
-let listaProductos = document.getElementById("lista");
-const productos33 = [
+
+
+const productos34 = [
     {id: 1, nombre: "camisa", precio: 3500},
     {id: 2, nombre: "pantalon", precio: 3000},
     {id: 3, nombre: "medias", precio: 1800},
-    {id: 4, nombre: "cinturon", precio: 1500}, 
+    {id: 4, nombre: "cinturon", precio: 1500},  //si agrego nuevos productos se agregan automaticamente al html
 ];
-productos33.forEach(item =>{
+
+productos34.forEach(item => {
     let div = document.createElement("div");
     div.innerHTML = `
     <h2>ID: ${item.id}</h2>
     <h3>Nombre: ${item.nombre}</h3>
     <b>Precio: ${item.precio}</b>
+    <button id="boton${item.id}">Agregar</button>
     `;
-    lista.append(div);
+
+    document.body.append(div);
+    let boton = document.getElementById(`boton${item.id}`);
+
+    const ejecutar = (id) =>{
+        console.log(id);
+    }
+    boton.addEventListener("click", () => ejecutar(item.id));
 })
