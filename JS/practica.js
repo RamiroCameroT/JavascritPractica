@@ -609,122 +609,229 @@
 // //     saludo3.innerHTML = "Hola Buen dia"
 // } else if (seccion === "Chau"){
 //     saludo3.innerHTML = "Adios"
-// } else{
-//     saludo3.innerHTML = "otra vez"
-// };
+// // } else{
+// //     saludo3.innerHTML = "otra vez"
+// // };
 
-// if(seccion === "Hola"){ 
-//     saludo3.innerHTML = "<h1>Hola Buen dia</h1>"
-// } else if (seccion === "Chau"){
-//     saludo3.innerHTML = "<h1>Adios</h1>"
-// } else{
-//     saludo3.innerHTML = "<h1>otra vez</h1>"
-// };
-// if(seccion === "Hola"){ 
-//     saludo3.className = "Azul" //aca le agrego CSS
-//     saludo3.innerHTML = "<h1>Hola Buen dia</h1>" //aca modifico el h4 por un h1  cambio la etiqueta
-// } else if (seccion === "Chau"){
-//     saludo3.className = "Amarillo"
-//     saludo3.innerHTML = "<h1>Adios</h1>"
-// } else{
-//     saludo3.innerHTML = "<h1>otra vez</h1>"
-// };
-// let tituloH3 = document.createElement("h3");  // Aca agrego un H3
-// tituloH3.innerHTML = "<p>Holaaa soy un parrafo dentro de h3</p>" // Aca defino que hay por dentro del H3
-// // document.body.append(tituloH3) // aca agrego el h3 al html y lo pongo en el body
+// // if(seccion === "Hola"){ 
+// //     saludo3.innerHTML = "<h1>Hola Buen dia</h1>"
+// // } else if (seccion === "Chau"){
+// //     saludo3.innerHTML = "<h1>Adios</h1>"
+// // } else{
+// //     saludo3.innerHTML = "<h1>otra vez</h1>"
+// // };
+// // if(seccion === "Hola"){ 
+// //     saludo3.className = "Azul" //aca le agrego CSS
+// //     saludo3.innerHTML = "<h1>Hola Buen dia</h1>" //aca modifico el h4 por un h1  cambio la etiqueta
+// // } else if (seccion === "Chau"){
+// //     saludo3.className = "Amarillo"
+// //     saludo3.innerHTML = "<h1>Adios</h1>"
+// // } else{
+// //     saludo3.innerHTML = "<h1>otra vez</h1>"
+// // };
+// // let tituloH3 = document.createElement("h3");  // Aca agrego un H3
+// // tituloH3.innerHTML = "<p>Holaaa soy un parrafo dentro de h3</p>" // Aca defino que hay por dentro del H3
+// // // document.body.append(tituloH3) // aca agrego el h3 al html y lo pongo en el body
 
-// let contenedor11 = document.getElementById ("contenedor1");
-// // contenedor11.remove();
+// // let contenedor11 = document.getElementById ("contenedor1");
+// // // contenedor11.remove();
 
-// let listaCompleta = document.getElementById("lista")
-// const opcionesLista = ["Ramiro", "Denisse", "Nicole", "Julieta", "Facu"]
-// opcionesLista.forEach(item =>{
-//     let li = document.createElement("li");
-// //     li.innerHTML = item;
-// //     listaCompleta.append(li);
+// // let listaCompleta = document.getElementById("lista")
+// // const opcionesLista = ["Ramiro", "Denisse", "Nicole", "Julieta", "Facu"]
+// // opcionesLista.forEach(item =>{
+// //     let li = document.createElement("li");
+// // //     li.innerHTML = item;
+// // //     listaCompleta.append(li);
+// // // });
+// // let listaProductos = document.getElementById("lista");
+// // const productos33 = [
+// //     {id: 1, nombre: "camisa", precio: 3500},
+// //     {id: 2, nombre: "pantalon", precio: 3000},
+// //     {id: 3, nombre: "medias", precio: 1800},
+// //     {id: 4, nombre: "cinturon", precio: 1500}, 
+// // ];
+// // productos33.forEach(item =>{
+// //     let div = document.createElement("div");
+// //     div.innerHTML = `
+// //     <h2>ID: ${item.id}</h2>
+// //     <h3>Nombre: ${item.nombre}</h3>
+// //     <b>Precio: ${item.precio}</b>
+// //     `;
+// //     lista.append(div);
+// // })
+
+// // let boton1 = document.getElementById("boton");
+
+// // const saludar12 = () => {
+// //     alert("Hiciste click en el boton")
+// // };
+
+// // boton.addEventListener("click", saludar12);
+
+// // let boton1 = document.getElementById("boton");
+// // boton1.onclick = saludar12; 
+
+// // let boton = document.getElementById("boton");
+
+// // const saludar132 = (nombre) => {
+// //     alert("Hiciste click en el boton", nombre)
+// // };
+
+// // // boton.addEventListener("click", () => saludar132("Juli"));  //si la funcion es con parametros le tengo que poner aca una arrow function
+
+// // let boton = document.getElementById("boton");
+
+// // const ejecutar = (apellido) => {
+// //     console.log("Hola tu apellido es", apellido)
+// // };
+
+// // boton.addEventListener("click", () => ejecutar("Juli"))
+
+
+
+
+// // let formulario = document.getElementById("formulario")
+// // formulario.addEventListener("submit", (e) => {
+// // //     e.preventDefault(); //esto hace que los datos cargados en el formulario no se borren una vez que ponemos enviar
+// // //     e.target.children;
+
+// // // });
+// // let formulario = document.getElementById("formulario")
+// // formulario.addEventListener("submit", (e) => {
+// //     e.preventDefault(); 
+// //     let inputs = e.target.children; //aca se van guardando los inputs
+// //     console.log((inputs)); //puedo sino poner (inputs) y me los trae todo
 // // });
-// let listaProductos = document.getElementById("lista");
-// const productos33 = [
+
+
+// const productos34 = [
 //     {id: 1, nombre: "camisa", precio: 3500},
 //     {id: 2, nombre: "pantalon", precio: 3000},
 //     {id: 3, nombre: "medias", precio: 1800},
-//     {id: 4, nombre: "cinturon", precio: 1500}, 
+//     {id: 4, nombre: "cinturon", precio: 1500},  //si agrego nuevos productos se agregan automaticamente al html
 // ];
-// productos33.forEach(item =>{
+
+// productos34.forEach(item => {
 //     let div = document.createElement("div");
 //     div.innerHTML = `
 //     <h2>ID: ${item.id}</h2>
 //     <h3>Nombre: ${item.nombre}</h3>
 //     <b>Precio: ${item.precio}</b>
+//     <button id="boton${item.id}">Agregar</button>
 //     `;
-//     lista.append(div);
+
+//     document.body.append(div);
+//     let boton = document.getElementById(`boton${item.id}`);
+
+//     const ejecutar = (id) =>{
+//         console.log(id);
+//     }
+//     boton.addEventListener("click", () => ejecutar(item.id));
 // })
 
-// let boton1 = document.getElementById("boton");
+// //LOCAL STORAGE 
+// //guardar en el local storage
+// localStorage.setItem("nombre", "Ramiro"); //lo primero es la clave y despues el valor. se guarda en el navegador y por mas de que salga y vuelva  a entrar sigue guardado
+// localStorage.setItem("apellido", "Julieta");
 
-// const saludar12 = () => {
-//     alert("Hiciste click en el boton")
-// };
+// //recuperar item del local storage
+// // let nombre = localStorage.getItem("nombre");
+// // console.log(nombre);
 
-// boton.addEventListener("click", saludar12);
+// // for(let i = 0 ; i < localStorage.length; i++){
+// //     let clave = localStorage.key(i);
+// //     console.log("clave", clave);
+// //     console.log("valor", localStorage.getItem(clave));
+// // };
 
-// let boton1 = document.getElementById("boton");
-// boton1.onclick = saludar12; 
+// localStorage.removeItem("nombre")
+// // // localStorage.clear(); // borra todo el storage
 
-// let boton = document.getElementById("boton");
+// let objeto1 = {nombre:"Ramiro", apellido: "Camero", edad: 26};
+// localStorage.setItem("Objeto", JSON.stringify(objeto1));
 
-// const saludar132 = (nombre) => {
-//     alert("Hiciste click en el boton", nombre)
-// };
+// let arreglo12 = [1, 2, 3, 4, 5];
+// localStorage.setItem("Arreglo", JSON.stringify(arreglo12));
 
-// // boton.addEventListener("click", () => saludar132("Juli"));  //si la funcion es con parametros le tengo que poner aca una arrow function
+// let objeto2 = localStorage.getItem("Objeto");
+// console.log(JSON.parse(objeto2));
 
-// let boton = document.getElementById("boton");
+// let arreglo = JSON.parse(localStorage.getItem("Arreglo")) // otra forma para que ya nos quede la variable con el array o objeto
+// // console.log(arreglo);
 
-// const ejecutar = (apellido) => {
-//     console.log("Hola tu apellido es", apellido)
-// };
+// let objeto1 = {nombre:"Ramiro", apellido: "Camero", edad: 26};
+// localStorage.setItem("Objeto", JSON.stringify(objeto1)); //uso stringfy para guardarlo como objeto o array
 
-// boton.addEventListener("click", () => ejecutar("Juli"))
+// let arreglo12 = [1, 2, 3, 4, 5, "Hola"];
+// localStorage.setItem("Arreglo", JSON.stringify(arreglo12));
+
+// //recuperar objeto o array del storage
+// let objeto2 = localStorage.getItem("Objeto");
+// console.log(JSON.parse(objeto2)); //aca uso parce para traerlo como objeto o array, sino me lo trae mal
+
+// let arreglo = JSON.parse(localStorage.getItem("Arreglo")) // otra forma para que ya nos quede la variable con el array o objeto
+// let lista = document.getElementById("lista")
+
+// arreglo12.forEach(item =>{
+//     let li = document.createElement("li");
+//     li.innerHTML = item;
+//     lista.append(li);
+// // })
+
+// const productosCarrito = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500},
+//     {id: 5, nombre: "Gorra", precio: 4500}  //si agrego nuevos productos se agregan automaticamente al html
+// ];
+// // localStorage.setItem("Carrito", JSON.stringify(productosCarrito)); //aca arme carrito
+
+// let usuario;
+// let usuarioStorage = localStorage.getItem("usuario");
+// console.log(usuarioStorage);
+
+// if(usuarioStorage){
+//     usuario = usuarioStorage;
+//     let mensaje = `Bienvenido ${usuario}`
+//     alert(mensaje)
+// } else {
+//     usuario = prompt("Ingrese su nombre");
+//     localStorage.setItem("usuario", usuario);
+//     let mensaje = `Eres nuevo, Bienvenido ${usuario}`
+//     alert(mensaje)
+// }
+
+// const productosCarrito = [
+//     {id: 1, nombre: "camisa", precio: 3500},
+//     {id: 2, nombre: "pantalon", precio: 3000},
+//     {id: 3, nombre: "medias", precio: 1800},
+//     {id: 4, nombre: "cinturon", precio: 1500},
+//     {id: 5, nombre: "Gorra", precio: 4500}  //si agrego nuevos productos se agregan automaticamente al html
+// ];
+// localStorage.setItem("carrito", JSON.stringify(productosCarrito)); //aca arme carrito
+
+let carrito = [];
+let carritoStorage = localStorage.getItem("carrito");
+let carritoHTML = document.getElementById("carrito12")
+let boton22 = document.getElementById("eliminar");
 
 
+if(carritoStorage){
+    carrito = JSON.parse(carritoStorage)
+};
 
-
-// let formulario = document.getElementById("formulario")
-// formulario.addEventListener("submit", (e) => {
-// //     e.preventDefault(); //esto hace que los datos cargados en el formulario no se borren una vez que ponemos enviar
-// //     e.target.children;
-
-// // });
-// let formulario = document.getElementById("formulario")
-// formulario.addEventListener("submit", (e) => {
-//     e.preventDefault(); 
-//     let inputs = e.target.children; //aca se van guardando los inputs
-//     console.log((inputs)); //puedo sino poner (inputs) y me los trae todo
-// });
-
-
-const productos34 = [
-    {id: 1, nombre: "camisa", precio: 3500},
-    {id: 2, nombre: "pantalon", precio: 3000},
-    {id: 3, nombre: "medias", precio: 1800},
-    {id: 4, nombre: "cinturon", precio: 1500},  //si agrego nuevos productos se agregan automaticamente al html
-];
-
-productos34.forEach(item => {
+carrito.forEach(item => {
     let div = document.createElement("div");
     div.innerHTML = `
-    <h2>ID: ${item.id}</h2>
-    <h3>Nombre: ${item.nombre}</h3>
-    <b>Precio: ${item.precio}</b>
-    <button id="boton${item.id}">Agregar</button>
+    <h2>Nombre: ${item.nombre}</h2>
+    <p>Precio: ${item.precio}</p>
     `;
-
-    document.body.append(div);
-    let boton = document.getElementById(`boton${item.id}`);
-
-    const ejecutar = (id) =>{
-        console.log(id);
-    }
-    boton.addEventListener("click", () => ejecutar(item.id));
+    carrito12.append(div)
 })
+
+boton22.addEventListener("click", () => {
+    localStorage.clear();
+    alert("Carrito eliminado");
+    location.reload();
+});

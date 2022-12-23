@@ -345,7 +345,7 @@ productos.push(new Producto("Jose", "Pepe", 23));
 console.log(productos);
 
 
-//FUNCIONES AVANZADAS
+//--------------------------------FUNCIONES AVANZADAS---------------------------------
 
 //Son funciones que reciben por parametro una funcion o retornan una funcion
 
@@ -389,7 +389,7 @@ let iteradora = (arreglo, funcion) => { //me tira error
 
 iteradora ([1, 2, 3, 4], console.log);
 
-//Metodos de Busca y Transformacion
+//-------------------------Metodos de Busca y Transformacion-----------------------------
 
 //FOR EACH (es un metodo de los arreglos para recorrer los arreglos y cada uno de sus elementos)
 
@@ -550,7 +550,7 @@ console.log(productos609.sort((a, b) => {
 }));
 
 
-//MATH
+//-----------------------MATH------------------------
 console.log(Math.E);
 console.log(Math.PI);
 console.log(Math.max(1, 5, 8, 90, 108, 5, 87)); //busca el maximo
@@ -563,7 +563,7 @@ console.log(Math.random()); // genera un numero al azar entre 0 y 1
 console.log(Math.random() * 50); // genera un numero al azar entre 0 y 50  los puedo combinar con cualquier otro de math
 
 
-//DATE
+//--------------------DATE----------------------------
 console.log(Date());
 console.log(new Date("2022 1, 10 23:15:32"));
 
@@ -582,7 +582,7 @@ let hoy1 = new Date();
 const milisegundosPorDia = (navidad - hoy1); //aca me lo trae en milisegundos
 
 
-//DOM  pata trabajar con Javascript colocar IDs en el html y para trabajar con CSS utiizar clases
+//-----------------------DOM ------------------------------ pata trabajar con Javascript colocar IDs en el html y para trabajar con CSS utiizar clases
 
 //GetElementById
 let elementoHtml = document.getElementById("Aplicacion");
@@ -605,6 +605,19 @@ let elementoHtmlClass1 = document.getElementsByClassName("objetos");
 for(const item of elementoHtmlClass1){ //recorremos el array uno por uno
     console.log(item.innerHTML);
 };
+
+//Queryselector  (trae como maximo un elemento)
+let elementosQueryClass = document.querySelector(".clase") //.clase h2  (si hay q ir a buscar algo dentro de la clase)
+let elementosQueryID = document.querySelector("#ID")
+let elementosQueryTag = document.querySelector("h2")
+
+//QueryselectorAll  (trae todos los elementos)
+let elementosQueryAllClass = document.querySelectorAll(".clase") //.navegacion li  (si hay q ir a buscar algo dentro de la clase)
+let elementosQueryAllID = document.querySelectorAll("#ID") //aca solo hay uno ya que los id se usan solo una vez
+let elementosQueryAllTag = document.querySelectorAll("h2")
+
+console.log(clase[0]);  //aca solo traigo el primer enlace con index cero
+
 
 //Modificar el HTML desde Javascript
 
@@ -637,6 +650,13 @@ if(seccion === "Hola"){
 let tituloH3 = document.createElement("h3");  // Paso 1 Aca agrego un H3
 tituloH3.innerHTML = "<p>Holaaa soy un parrafo dentro de h3</p>" // paso 2 Aca defino que hay por dentro del H3
 document.body.append(tituloH3) // Paso 3 Aca agrego el h3 al html y lo pongo en el body
+
+
+let nuevoEnlace = document.createElement("A");
+nuevoEnlace.href = "pagina2"; //aca le creo un href en caso de que sea un enlace
+nuevoEnlace.classList.add("clase5"); //aca le agrego una clase en el html
+const navegacion = document.querySelector(".navegacion");
+navegacion.appendChild(nuevoEnlace); //aca agrego un hijo sobre el contenedor
 
 //con Array simple
 let listaCompleta = document.getElementById("lista")  //Aca voy agregando datos al html en base a un array, si yo agrego algo al array, se agrega automaticamente al html
@@ -671,7 +691,7 @@ let contenedor11 = document.getElementById ("contenedor1"); //primero me lo trai
 contenedor11.remove();
 
 
-//EVENTOS
+//----------------------------------EVENTOS----------------------------------
 
 //CLICK
 
@@ -722,7 +742,7 @@ input12.addEventListener("input", () => {
 //SUBMIT
 let formulario = document.getElementById("formulario")
 formulario.addEventListener("submit", (e) => {
-    e.preventDefault(); //esto hace que los datos cargados en el formulario no se borren una vez que ponemos enviar
+    e.preventDefault(); //esto hace que los datos cargados en el formulario no se borren una vez que ponemos enviar y no se recargue la pagina
     alert("hola")
 });
 
@@ -759,3 +779,107 @@ productos34.forEach(item => {
     }
     boton.addEventListener("click", () => ejecutar(item.id));
 })
+
+//--------------------------------STORAGE-------------------------------------
+
+//LOCAL STORAGE (no se puede guardar una funcion, ya que despues no funcionaria, lo mismo con arrays y objetos)  para guardar en carrito, en favoritos, puntajes
+//guardar en el local storage
+localStorage.setItem("nombre", "Ramiro"); //lo primero es la clave y despues el valor. se guarda en el navegador y por mas de que salga y vuelva  a entrar sigue guardado
+localStorage.setItem("apellido", "Julieta");
+//recuperar item del local storage
+let nombre = localStorage.getItem("nombre");
+console.log(nombre);
+
+//SESION STORAGE
+sessionStorage.setItem("nombre", "Julieta") // aca si cierro la pagina y la vuelvo a abrir se pierde
+
+//recorrer storage
+
+for(let i = 0 ; i < localStorage.length; i++){
+    let clave = localStorage.key(i);
+    console.log("clave", clave);
+    console.log("valor", localStorage.getItem(clave));
+};
+
+//Eliminar datos del storage (para local y sesion)
+localStorage.removeItem("nombre") // le ponemos el nombre de la clave. aca se borra uno por uno
+localStorage.clear(); // borra todo el storage
+
+//-----------JSON----------
+//sirve para guardar en el storage arrays y objetos
+
+let objeto1 = {nombre:"Ramiro", apellido: "Camero", edad: 26};
+localStorage.setItem("Objeto", JSON.stringify(objeto1)); //uso stringfy para guardarlo como objeto o array
+
+let arreglo12 = [1, 2, 3, 4, 5];
+localStorage.setItem("Arreglo", JSON.stringify(arreglo12));
+
+//recuperar objeto o array del storage
+let objeto2 = localStorage.getItem("Objeto");
+console.log(JSON.parse(objeto2)); //aca uso parce para traerlo como objeto o array, sino me lo trae mal
+
+let arreglo = JSON.parse(localStorage.getItem("Arreglo")) // otra forma para que ya nos quede la variable con el array o objeto
+
+//aca me traje el array del storage y lo pongo en el html
+let lista = document.getElementById("lista")
+
+arreglo12.forEach(item =>{
+    let li = document.createElement("li");
+    li.innerHTML = item;
+    lista.append(li);
+});
+
+//Carrito
+
+const productosCarrito = [
+    {id: 1, nombre: "camisa", precio: 3500},
+    {id: 2, nombre: "pantalon", precio: 3000},
+    {id: 3, nombre: "medias", precio: 1800},
+    {id: 4, nombre: "cinturon", precio: 1500},
+    {id: 5, nombre: "Gorra", precio: 4500}  //si agrego nuevos productos se agregan automaticamente al html
+];
+localStorage.setItem("carrito", JSON.stringify(productosCarrito)); //aca arme carrito
+
+let carrito = [];
+let carritoStorage = localStorage.getItem("carrito"); //lo que esta en el storage lo guardo en esta nueva variable
+let carritoHTML = document.getElementById("carrito12") //aca llame la seccion en el html para despues agregar los divs
+
+if(carritoStorage){
+    carrito = JSON.parse(carritoStorage) //aca todo lo que etsa en carrito storage lo guardo en la variable carrito
+};
+
+carrito.forEach(item => {
+    let div = document.createElement("div");
+    div.innerHTML = `
+    <h2>Nombre: ${item.nombre}</h2>
+    <p>Precio: ${item.precio}</p>
+    `;
+    carrito12.append(div)
+});
+
+//boton para eliminar los elementos del localstorage (osea del carrito)
+let boton22 = document.getElementById("eliminar");
+
+boton22.addEventListener("click", () => {
+    localStorage.clear();
+    alert("Carrito eliminado");
+    location.reload(); // para que se recargue sola la pagina
+});
+
+
+
+//Ingresar con usuarios
+let usuario22;
+let usuarioStorage = localStorage.getItem("usuario22");  // si uso sesion cada vez que salga de internet y vuelva a entrar se me va a borrar el storage y me va a volver a pedir el nombre
+console.log(usuarioStorage);
+
+if(usuarioStorage){
+    usuario22 = usuarioStorage;
+    let mensaje = `Bienvenido ${usuario22}`
+    alert(mensaje)
+} else {
+    usuario22 = prompt("Ingrese su nombre");
+    localStorage.setItem("usuario", usuario22);
+    let mensaje = `Eres nuevo, Bienvenido ${usuario22}`
+    alert(mensaje)
+};
