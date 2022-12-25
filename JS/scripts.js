@@ -85,6 +85,8 @@ if(!"andres".includes("s")){ //aca anulo el inlcudes y es si pasa lo opuesto y m
     console.log("F no tiene s");
 }
 
+
+//---------------------BUCLES----------------------------
 //FOR
 
 let Numero = parseInt(prompt("ingrese un numero"));
@@ -113,7 +115,7 @@ for(let i=0; i<10; i++){
     console.log(i);
 }
 
-//WHILE
+//WHILE  hacaer una repeticion de codigo hasta que se cumpla una condicion
 let usuario = prompt("ingresar usuario").toLocaleUpperCase();
 while(usuario != "ANDRES"){
     alert("ingresar nombre de usuario correcto");
@@ -231,7 +233,7 @@ function Persona(nombrePers, apellidoPers, edadPers) {
 
 const persona123 = new Persona("Pepito","Camero", 28);
 const persona1234 = new Persona("Alan","Perez", 68);
-console.log(persona1234.Edad);
+console.log(persona1234.Edad); 
 
 
 function PersonaNew(info) { //otra forma para no poner todos los parametros cuando son muchos
@@ -258,7 +260,7 @@ const persona1 = new Persona("Ramiro", "Camero", 26);
 const persona2 = new Persona("Ramirddddo", "Camero", 276)
 console.log(persona2.hablar());
 
-class PersonaNueva{
+class PersonaNueva{ //hoy en dia se usan estas clases 
     constructor (nombrePN, apellidoPN, profesionPN = "Contador"){ //establezco contador por defecto
         this.Nombre = nombrePN;
         this.Apellido = apellidoPN;
@@ -316,7 +318,7 @@ const eliminar = (nombre) => {
 
 eliminar("Sofia");
 
-//arrays con onbjetos
+//arrays con objetos
 
 const productosArray = [
     {id: 1, nombre: "Ramiro", apellido: "Camero"},
@@ -747,10 +749,15 @@ formulario.addEventListener("submit", (e) => {
 });
 
 let formulario1 = document.getElementById("formulario")
-formulario1.addEventListener("submit", (e) => {
+formulario1.addEventListener("submit", (e) => { //la e (parametro) se utiliza para traer los inputs del formulario despues
     e.preventDefault(); 
-    let inputs = e.target.children; //aca se van guardando los inputs
+    let inputs = e.target.children; //aca se van guardando los inputs a partir de la e
+    let usuario11 = { //aca creo un usuario por cada input, cada vez que aprietan submit
+        nombre: inputs[0].value,
+        aoellido: inputs[1].value,
+    }
     console.log((inputs[0].value)); //puedo sino poner (inputs) y me los trae todo   input[0] se refiere al primer input del html, que este caso es el de type text
+    localStorage.setItem("Nombre", inputs[0].value)
 });
 
 
@@ -845,7 +852,7 @@ let carritoStorage = localStorage.getItem("carrito"); //lo que esta en el storag
 let carritoHTML = document.getElementById("carrito12") //aca llame la seccion en el html para despues agregar los divs
 
 if(carritoStorage){
-    carrito = JSON.parse(carritoStorage) //aca todo lo que etsa en carrito storage lo guardo en la variable carrito
+    carrito = JSON.parse(carritoStorage) //aca todo lo que esta en carrito storage lo guardo en la variable carrito
 };
 
 carrito.forEach(item => {
@@ -883,3 +890,4 @@ if(usuarioStorage){
     let mensaje = `Eres nuevo, Bienvenido ${usuario22}`
     alert(mensaje)
 };
+
