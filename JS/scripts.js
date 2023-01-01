@@ -891,3 +891,126 @@ if(usuarioStorage){
     alert(mensaje)
 };
 
+
+//---------------OPERADORES AVANZADOS----------------
+
+//++
+let numero22 = 5; 
+numero22 = numero22 +1;
+numero22 += 1;
+numero22++;
+
+//--
+let numero23 = 5;
+numero23 = numero23 - 1;
+numero23 -= 1;
+numero23--;
+
+
+/*Operador ternario (remplaza el if else)
+
+condicion ? codigo verdadero : codigo falso */
+
+let edad = 18;
+if (edad >= 18) {
+    console.log("Podes entras a la fiesta");        
+} else{
+    console.log("No podes entrar");
+};
+
+edad >= 18 ? console.log("Podes entras a la fiesta") : console.log("No podes entrar"); //forma resumida
+
+
+let usuario23 = {
+    Nombre: "Ramiro",
+    Edad: 17
+};
+const permiso = usuario23.Edad >= 18 ? true : false; //se le asigna true or false a la variable permiso
+permiso ? console.log("Podes entras a la fiesta") : console.log("No podes entrar");  //cuando pongo permiso es lo mismo que poner permiso = true
+
+
+//&& y ||
+
+/* operador1 && operador2    si operador1 representa algo verdadero, retorna operador2, sino retorna operador1 
+   operador1 || operador2    si operador1 representa algo falso, retorna operador2, sino retorna operador1 
+*/
+
+const carrito55 = [];
+
+if (carrito55.length === 0) {
+    console.log("El carrito esta vacio");
+}
+
+carrito55.length === 0 && console.log("El carrito esta vacio"); //si carrito.length es igual a 0, que aplique lo que esta despues del &&
+
+const carrito56 = JSON.parse(localStorage.getItem("Carrito")) || [];  //Si no existe algo en el local storage, la variable carrito queda [], y si existe algo se lo pone como valor
+
+
+//Operadpr Nullish
+
+/*Aca el operador ?? funciona igual que el ||*/
+
+console.log(0 ?? "Nullish"); //solo va a tirar Nullish cuando la primera parte sea null o undefined
+
+
+// objeto?.metodo
+
+const usuario34 = null;
+console.log(usuario.nombre || "El usuario no existe"); //aca me tira que no existe ya que como usuario no es un objeto, te tira error ya que cuando usas el. hace referencia al objeto
+Console.log(usuario?.nombre || "El usuario no existe"); //aca me va a tirar el usuario no existe, ya que al ponerle ?, si no es un objeto no pasa nada y lo toma como falso
+
+
+//Destructuracion de objetos
+
+let usuario11 = {
+    Nombre: "Ramiro",
+    Edad: 26,
+    Profesion: "Contador",
+    telefonos: {
+        celular: 112923823,
+        casa: 45155454,
+    }
+};
+
+// let nombre11 = usuario11.Nombre;
+// let edad11 = usuario11.Edad;
+
+
+let {Nombre: NombreNuevo, Profesion, telefonos: {casa}} = usuario11; // en los parametros pongo el nombre de los del objeto. saco las propiedades que quiero del usuario11. con lo de nombtre nuevo le cambie el nombre al elemento (key) del objeto
+console.log(NombreNuevo, Profesion, casa);
+
+const destructurar = ({Nombre, Profesion}) => { //desestructurar con una funcion y el los parametros les ponemos los keys del objeto
+    console.log(Nombre, Profesion);
+};
+destructurar(usuario11);
+
+
+//Destructuracion de arrays
+
+const nombres123 = ["Julieta", "Sofia", "Ramiro", "Nicole"];
+const [a, b, , c] = nombres123;  //aca saltee a Ramiro con el espacio
+console.log(a, b, c);
+
+
+//Cambio de valores (...)
+
+let persona44 = "Pepito" // para datos primitivos, ejemplo strings, numbers, booleans.- persona44 se forma en un cajoncito aparte que persona45
+let persona45 = persona44; 
+persona45 = "Mariana";
+console.log(persona44); 
+
+let persona54 = {nombre:"Ramiro", Edad: 26}; //esto son datos no primitivos, entonces no se forman cajitas separadas, si le asignamos a persona55 el valor de persona54, cuando se modifique cualquiera de los dos, afecta a ambos ya que trabajan sobre la misma cajita
+let persona55 = persona54;
+persona54.nombre = "Julieta";
+console.log(persona54);
+
+let persona56 = {nombre:"Ramiro", Edad: 26}; 
+let persona57 = {
+    ...persona56,
+    direccion:"Av"
+}; //aca formamos un nuevo objeto y ya no quedan ambos en la misma cajita. se hace una copia de persona56 y le agregue una nueva key, que si ya existia la remplazaba y sino la crea nueva
+persona57.nombre = "Julieta";
+console.log(persona56);
+
+const numeros456 = [1, 2, 45, 65, 455, 84, 6];
+console.log(Math.max(...numeros456)); //si no le pongo los tres puntitos no me funcionaria
