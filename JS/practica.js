@@ -918,11 +918,17 @@
 // // console.log(persona54);
 
 
-// let persona56 = {nombre:"Ramiro", Edad: 26}; 
-// let persona57 = {...persona56};
-// persona57.nombre = "Julieta";
-// console.log(persona56);
+// // let persona56 = {nombre:"Ramiro", Edad: 26}; 
+// // let persona57 = {...persona56};
+// // persona57.nombre = "Julieta";
+// // console.log(persona56);
 
-const numeros456 = [1, 2, 45, 65, 455, 84, 6];
+// const numeros456 = [1, 2, 45, 65, 455, 84, 6];
 
-console.log(Math.max(...numeros456));
+// console.log(Math.max(...numeros456));
+
+const DateTime = luxon.DateTime;  //siempre poner esta primera variable
+
+const now = DateTime.now().toLocaleString(DateTime.DATE_MED)
+
+console.log(now.year);

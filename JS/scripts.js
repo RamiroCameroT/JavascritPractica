@@ -1014,3 +1014,30 @@ console.log(persona56);
 
 const numeros456 = [1, 2, 45, 65, 455, 84, 6];
 console.log(Math.max(...numeros456)); //si no le pongo los tres puntitos no me funcionaria
+
+
+
+//LUXON
+
+const DateTime = luxon.DateTime;  //siempre poner esta primera variable
+
+const now = DateTime.now().toLocaleString(DateTime.DATE_FULL) // en donde dice date full le vamos cambiando los formatos. lo otro queda igual
+
+console.log(now.year);
+console.log(now.month);
+console.log(now.day);
+
+const now1 = DateTime.now().toLocaleString(DateTime.SHORT)
+const sumar = now1.plus([ hours= 1, minutes = 27 ]);  //aca le sumo a la fecha actual
+const restar1 = now1.minus([ month= 1, days = 27 ]);  //aca le resto a la fecha actual
+
+
+//para calcular intervalos
+const Interval = luxon.Interval;
+
+const now2 = DateTime.now();
+const later = DateTime.local(1996, 02, 15);
+
+const dif = Interval.fromDateTimes(now2, later);
+
+console.log(dif.length("days")); // puedo poner years, months, hours, minutes, etc.
