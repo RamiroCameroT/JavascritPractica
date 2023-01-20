@@ -927,8 +927,30 @@
 
 // console.log(Math.max(...numeros456));
 
-const DateTime = luxon.DateTime;  //siempre poner esta primera variable
+// const DateTime = luxon.DateTime;  //siempre poner esta primera variable
 
-const now = DateTime.now().toLocaleString(DateTime.DATE_MED)
+// const now = DateTime.now().toLocaleString(DateTime.DATE_MED)
 
-console.log(now.year);
+// // console.log(now.year);
+
+// setTimeout(() => {
+//     alert("hola");
+// }, 5000); //esta en milisegundos, estos serian 3 segundos
+
+// let contador = 0;
+// const intervalo = setInterval(() => {
+//     contador++;
+//     console.log("contador:", contador);
+
+//     if (contador >= 5) {
+//         clearInterval(intervalo);
+//         console.log("Se removio el intervalo");
+//     }
+// }, 1000);
+
+const futuro = (value) => {
+    return new Promise((resolve, reject) => {
+        value ? resolve("Promesa cumplida") : reject("Promesa rechazada")
+    });
+}
+console.log(futuro(true));

@@ -1041,3 +1041,46 @@ const later = DateTime.local(1996, 02, 15);
 const dif = Interval.fromDateTimes(now2, later);
 
 console.log(dif.length("days")); // puedo poner years, months, hours, minutes, etc.
+
+
+//--------------------ASINCRONIA-------------------
+
+//settimeout(function, tiempo)
+
+setTimeout(() => {
+    console.log("hola");
+}, 3000); //esta en milisegundos, estos serian 3 segundos
+
+//setinterval
+
+setInterval(() => {
+    console.log("hola");
+}, 10000); //aca se calcula el intervalo y lo que hace es que cada ese intervalo se ejecuta el codigo ilimitadamente. se puede hacer por ejemplo para mandar reportes todos los dias de forma automatica
+
+let contador = 0;
+const intervalo = setInterval(() => {
+    contador++;
+    console.log("contador:", contador);
+
+    if (contador >= 5) {
+        clearInterval(intervalo);
+        console.log("Se removio el intervalo");
+    }
+}, 1000);
+
+//Promesas
+
+new Promise((resolve, reject) => {
+    console.log("codigo");
+});
+
+
+
+const futuro = (value) => {
+    return new Promise((resolve, reject) => {
+        value ? resolve("Promesa cumplida") : reject("Promesa rechazada")
+    });
+}
+console.log(futuro(true));
+futuro(true).then(respuesta => console.log(respuesta));
+futuro(false).then(respuesta => console.log(respuesta)).catch(error => console.log(error)).finally(() => console.log("Proceso Finalizado"));
