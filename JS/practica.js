@@ -945,12 +945,86 @@
 //     if (contador >= 5) {
 //         clearInterval(intervalo);
 //         console.log("Se removio el intervalo");
-//     }
-// }, 1000);
+// //     }
+// // }, 1000);
 
-const futuro = (value) => {
-    return new Promise((resolve, reject) => {
-        value ? resolve("Promesa cumplida") : reject("Promesa rechazada")
-    });
+// const futuro = (value) => {
+//     return new Promise((resolve, reject) => {
+//         value ? resolve("Promesa cumplida") : reject("Promesa rechazada")
+//     });
+// }
+// console.log(futuro(true));
+
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then((response) => response.json())
+//   .then((json) => console.log(json))
+//   .catch(error => console.log(error));
+
+//   fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data[0].title);
+// //     console.log(data[0].body);
+// //   })
+// //   .catch(error => console.log(error));
+
+
+
+// // fetch('https://jsonplaceholder.typicode.com/posts')
+// //   .then((response) => response.json())
+// //   .then((json) => {
+// //     console.log(json);
+// //     console.log(json[0].title); //aca me traigo lo del index 0 y el titulo
+// //     console.log(json[0].body);
+// //   })
+// //   .catch(error => console.log(error));
+
+// let publi = document.getElementById("publicaciones")
+
+//   fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then((response) => response.json())
+//   .then((json) => {
+//     json.forEach(item => {
+//         const li = document.createElement("li");
+//         li.innerHTML=`
+//         <h2>${item.title}</h2>    
+//         <h4>${item.body}</h4>
+//         `
+    
+//         publi.append(li)
+//     })
+  
+//   })
+//   .catch(error => console.log(error));
+
+  
+//   fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     title: 'Probando',
+//     body: 'Nuestra primera publicacion',
+//     userId: 1,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json()) //siemore que hay promesas hay que poner .then
+//   .then((json) => console.log(json))
+//   .catch(error => console.log(error));
+
+
+const traerProductos = async () => {
+  try { //el try se usa por si falla el https
+      const response = await fetch ('https://jsonplaceholder.typicode.com/posts') //aca lo unico que cambia es la ruta
+      const data = await response.json();//esto siempre qued aigual
+      data.forEach((item) => { //y esto ya es un array y puedo seguir con el codigo
+          console.log(item) //aca puedo crear el div y despues appendearlo
+      }) 
+      
+  } catch (error) {
+      console.log(error);
+  }
 }
-console.log(futuro(true));
+
+traerProductos();
