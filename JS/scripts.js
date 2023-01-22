@@ -1145,6 +1145,7 @@ const traerProductos = async () => {
     try { //el try se usa por si falla el https
         const response = await fetch ('https://jsonplaceholder.typicode.com/posts') //aca lo unico que cambia es la ruta
         const data = await response.json();//esto siempre qued aigual
+        
         data.forEach((item) => { //y esto ya es un array y puedo seguir con el codigo
             console.log(item) //aca puedo crear el div y despues appendearlo
         }) 
@@ -1155,3 +1156,35 @@ const traerProductos = async () => {
   }
   
   traerProductos();
+
+
+  
+
+const traerProductos1 = async () => {
+    try { //el try se usa por si falla el https
+        const response = await fetch ('https://rickandmortyapi.com/api/character') //aca lo unico que cambia es la ruta
+        const data = await response.json();//esto siempre qued aigual
+        
+        let filtro = prompt("Ingrese lo que quiere buscar")
+        let filtrados = data.filter( item => item.status.includes(filtro)); //el status es una propiedad justo de esa api
+
+        filtrados.forEach((item) => { //y esto ya es un array y puedo seguir con el codigo
+            const div = document.createElement("div");
+            div.innerHTML=`
+            <h2>${item.title}</h2>    
+            <h4>${item.body}</h4>
+            `
+            
+            if (item.status === "Alive") {  //aca en base a la propiedad de cada objeto les agrego una clase de css
+                div.className ="claseAlive"
+            }
+            document.body.append(div) //aca puedo crear el div y despues appendearlo
+        }) 
+        
+    } catch (error) {
+        console.log(error);
+    }
+    }
+    
+    traerProductos1();
+        
